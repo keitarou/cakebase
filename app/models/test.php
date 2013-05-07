@@ -1,7 +1,24 @@
 <?php
+/**
+* クラスの説明
+*
+* @package Test
+* @author keitarou
+* @since 2013/05/07
+* @version 0.0.1
+*/
 class Test extends AppModel {
+	/**
+	   @var string モデル名
+	*/
 	var $name = 'Test';
+	/**
+		@var string コードのフォーマット
+	*/
 	var $code_format = "Axxxxxx";
+	/**
+		@var array バリデーション
+	*/
 	var $validate = array(
 		'code' => array(
 			'rule' => array('between', 7, 7),
@@ -18,10 +35,9 @@ class Test extends AppModel {
 	);
 	
 	/**
-		コードを自動裁判した結果を返す。
-
-		@params null
-		@return string
+		 コードを自動裁判した結果を返す。
+		
+		 @return string 自動採番されたコード
 	*/
 	public function setCode(){
 		$number_length = strlen($this->code_format) - 1;
@@ -51,11 +67,11 @@ class Test extends AppModel {
 	}
 
 	/**
-		重複したカラムの値を持つレコードがあるかチェックする
-
-		@params array カラム名 => 値
-		@params int   レコードのid (なくてもOKだけど更新処理とかには必須)
-		@return array カラム名 => "メッセージ"
+		 重複したカラムの値を持つレコードがあるかチェックする
+		
+		 @params array     $coulmns    カラム名 => 値
+		 @params integer   $id         レコードのid (なくてもOKだけど更新処理とかには必須)
+		 @return array カラム名 => "メッセージ"
 	*/
 	public function chechUnique($coulmns, $id=false){
 		$error_message = false;
