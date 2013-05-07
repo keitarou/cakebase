@@ -1,10 +1,19 @@
-/*
-	Load Main Area Page
+/**
+* common.js
+*
+* @class common.js
+* @author Keitarou
+* @date 2013.4.30
+*/
 
-	@params	
-		string: request
-	@return 
-		false
+
+/**
+* method loadPage
+* ロードエリアにajaxロードろかける
+*
+* @method loadPage
+* @param {String} request リクエスト先
+* @return boolean false
 */
 function loadPage(request){
 	$('#main_load_area').button('loading');
@@ -18,13 +27,13 @@ function loadPage(request){
 	return false;
 }
 
-/*
-	Set Page Title
-	
-	@params	
-		string page-title
-	@return 
-		false
+/**
+* method setPageTitle
+* タイトルバーのタイトルを設定する
+*
+* @method setPageTitle
+* @param {String} title タイトル
+* @return boolean false
 */
 function setPageTitle(title){
 	$('.page-title').text(title);
