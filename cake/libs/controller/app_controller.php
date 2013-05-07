@@ -22,7 +22,7 @@ class AppController extends Controller {
 		App::import('Vendor', 'phpconsole');
 		PhpConsole::start(true, true, dirname(__FILE__));
 		// test code ↓
-		PhpConsole::debug('Hello Chrome Console', 'info');
+		// PhpConsole::debug('Hello Chrome Console', 'info');
 
 		$this->USER             = null;
 		$this->USER_ID          = null;
