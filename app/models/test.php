@@ -69,8 +69,8 @@ class Test extends AppModel {
 	/**
 		 重複したカラムの値を持つレコードがあるかチェックする
 		
-		 @params array     $coulmns    カラム名 => 値
-		 @params integer   $id         レコードのid (なくてもOKだけど更新処理とかには必須)
+		 @param array     $coulmns    カラム名 => 値
+		 @param integer   $id         レコードのid (なくてもOKだけど更新処理とかには必須)
 		 @return array カラム名 => "メッセージ"
 	*/
 	public function chechUnique($coulmns, $id=false){
